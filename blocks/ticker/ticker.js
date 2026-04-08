@@ -11,9 +11,9 @@ const stocks = [
 function createTicker() {
   const childDiv = document.querySelector('.ticker-wrapper div').children;
 
-childDiv[0].classList.add('my-new-class');
+childDiv[0].classList.add('ticker-content');
 
-childDiv[0].id = 'my-unique-id';
+childDiv[0].id = 'stock-ticker';
   
     const ticker = document.getElementById('stock-ticker');
     // Function to generate the HTML for a single stock
