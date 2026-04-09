@@ -6,9 +6,16 @@
   border-bottom: 2px solid #2a2a2a;
   box-sizing: border-box;
 }
+.ticker-author-wrap {
+  width: 100%;
+  overflow: hidden;
+  background-color: #121212; /* Dark background */
+  border-bottom: 2px solid #2a2a2a;
+  box-sizing: border-box;  
+}
 
 /* The moving track */
-.ticker {
+.ticker-author {
   display: flex;
   white-space: nowrap;
   /* 20s controls the speed. linear keeps it smooth */
@@ -16,7 +23,7 @@
 }
 
 /* Pause on hover so users can read the price */
-.ticker:hover {
+.ticker-author:hover {
   animation-play-state: paused;
 }
 
