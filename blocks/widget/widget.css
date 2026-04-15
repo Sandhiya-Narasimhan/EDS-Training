@@ -1,19 +1,38 @@
 
-.widgets-wrapper {
+.widget-wrapper .widget  {
     text-align: center;
 }
 
-.widgets-wrapper div:nth-child(2), .widgets-wrapper div:last-child {
+.widget-wrapper .widget a {
+    font-size: 20px;
+}
+
+.widget-wrapper .widget p {
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.widget-wrapper .widget > div:nth-child(2), .widget-wrapper .widget > div:last-child {
     display: flex;
     text-align: center;
 }
 
-.widgets-wrapper div:nth-child(2) a, .widgets-wrapper div:last-child a{
+.widget-wrapper .widget > div:nth-child(2) div:hover, .widget-wrapper .widget > div:last-child div:hover {
+    background-color: #0659d4;
+    color: #ffffff !important;
+}
+
+.widget-wrapper .widget > div:nth-child(2) a, .widget-wrapper .widget > div:last-child a{
     color: #000000;
 }
 
-.widgets-wrapper div:nth-child(2) a:hover, .widgets-wrapper div:last-child a:hover{
+.widgets-wrapper .widget > div:nth-child(2) h2 a:hover, .widgets-wrapper .widget > div:last-child h2 a:hover{
+    color: #ffffff !important;
     text-decoration: none;
 }
 
-
+.widgets-wrapper .widget > div:nth-child(2) div:first-child h2 {
+  content: url('../../icons/search.svg');
+  vertical-align: middle; /* Optional: aligns image with text */
+  margin-right: 10px
+}
