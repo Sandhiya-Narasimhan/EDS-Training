@@ -7,4 +7,5 @@ widgetH2.forEach(ele => {
   newImg.src =  `${icon}`;
   newImg.alt = 'Description';
   ele.parentNode.insertBefore(newImg, ele);
+  
 })
