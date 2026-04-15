@@ -1,1 +1,19 @@
 
+.widgets-wrapper {
+    text-align: center;
+}
+
+.widgets-wrapper div:nth-child(2), .widgets-wrapper div:last-child {
+    display: flex;
+    text-align: center;
+}
+
+.widgets-wrapper div:nth-child(2) a, .widgets-wrapper div:last-child a{
+    color: #000000;
+}
+
+.widgets-wrapper div:nth-child(2) a:hover, .widgets-wrapper div:last-child a:hover{
+    text-decoration: none;
+}
+
+
