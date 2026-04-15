@@ -1,1 +1,46 @@
+.textwithcta-container h5 {
+    font-size: 16px;
+}
 
+.textwithcta-container h2 {
+    font-size: 40px;
+    margin: 7px 0;
+} 
+
+.textwithcta-container[data-id='bg-image-content'] {
+    background-image: url('https://demo.themexbd.com/wpx/technowp/wp-content/uploads/2025/04/technowp-slider2.jpg');
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+.textwithcta-container .textwithcta-wrapper {
+    padding: 0;
+}
+
+.textwithcta-container .textwithcta.block > div {
+    display: flex;
+}
+.textwithcta-container .textwithcta.block > div div:first-child {
+    width: 60%;
+}
+.textwithcta-container .textwithcta.block > div div:last-child {
+    width: 40%;
+}
+.textwithcta-container .textwithcta.block > div div:last-child p {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+.textwithcta-container .textwithcta.block > div div:last-child p a {
+    color: #ffffff;
+    width: 40%;
+    background: #0659d4;
+    height: 40%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 10px;
+}
