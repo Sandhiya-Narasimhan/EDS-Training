@@ -1,0 +1,120 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 40px;
+  background: #fff;
+  text-align: center;
+}
+ 
+/* Section */
+.gallery-section h2 {
+  margin-bottom: 10px;
+}
+ 
+/* Buttons */
+.filter-buttons {
+  margin-bottom: 30px;
+}
+ 
+.filter-buttons button {
+  padding: 8px 16px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+ 
+.filter-buttons button.active {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+ 
+/* Image grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+ 
+/* Image box */
+.img-box {
+  overflow: hidden;
+  border-radius: 6px;
+}
+ 
+.img-box img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+ 
+.img-box:hover img {
+  transform: scale(1.1);
+}
+/* Base image box */
+.img-box {
+  overflow: hidden;
+  border-radius: 6px;
+  transform-origin: center;
+  opacity: 0;
+}
+ 
+/* Image */
+.img-box img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+ 
+/* LEFT image */
+.rotate-0 {
+  transform: translateX(-120px) rotate(-25deg) scale(0.9);
+  animation: rotateLeft 0.9s ease forwards;
+}
+ 
+/* CENTER image */
+.rotate-1 {
+  transform: translateY(60px) rotate(15deg) scale(0.9);
+  animation: rotateCenter 0.9s ease forwards;
+}
+ 
+/* RIGHT image */
+.rotate-2 {
+  transform: translateX(120px) rotate(25deg) scale(0.9);
+  animation: rotateRight 0.9s ease forwards;
+}
+ 
+/* Animations */
+@keyframes rotateLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+}
+ 
+@keyframes rotateCenter {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+ 
+@keyframes rotateRight {
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+}
+ 
+/* Hover zoom (optional, looks nice) */
+.img-box:hover img {
+  transform: scale(1.08);
+  transition: transform 0.4s ease;
+}
+ 
+ 
