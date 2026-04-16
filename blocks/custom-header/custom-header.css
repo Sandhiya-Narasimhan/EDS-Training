@@ -1,0 +1,151 @@
+/* ================================
+   HEADER BASE
+================================ */
+.custom-header-wrapper {
+  background: #ffffff;
+  border-bottom: 3px solid #0b5ed7;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.custom-header.block > div {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ================================
+   LOGO
+================================ */
+.custom-header.block > div > div:first-child img {
+  max-height: 45px;
+}
+
+/* ================================
+   MAIN NAV
+================================ */
+.custom-header.block > div > div:not(:first-child):not(:last-child) ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.custom-header.block > div > div {
+  position: relative;
+}
+
+.custom-header.block > div > div > ul {
+  display: flex;
+  align-items: center;
+}
+
+.custom-header.block li {
+  position: relative;
+}
+
+/* Top-level links */
+.custom-header a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 14px;
+  display: block;
+}
+
+.custom-header a:hover {
+  color: #0b5ed7;
+}
+
+/* ================================
+   DROPDOWN MENU
+================================ */
+.custom-header li ul {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  min-width: 230px;
+  display: none;
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.custom-header li ul li {
+  padding: 0;
+}
+
+.custom-header li ul li a,
+.custom-header li ul li {
+  font-size: 14px;
+  padding: 10px 20px;
+  color: #222;
+  cursor: pointer;
+}
+
+.custom-header li ul li:hover {
+  background: #f3f6fb;
+  color: #0b5ed7;
+}
+
+/* Show dropdown on hover */
+.custom-header li:hover > ul {
+  display: block;
+}
+
+/* ================================
+   ACTIVE / BUTTON STYLE
+================================ */
+.button.primary {
+  background: transparent;
+  font-weight: 600;
+}
+
+.button.primary::after {
+  content: " ▾";
+  font-size: 12px;
+}
+
+/* ================================
+   GET QUOTES BUTTON
+================================ */
+.custom-header > div > div:last-child a {
+  background: #0b5ed7;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.custom-header > div > div:last-child a:hover {
+  background: #084bb5;
+}
+
+/* ================================
+   REMOVE UNWANTED LIST STYLES
+================================ */
+.custom-header p {
+  margin: 0;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 992px) {
+  .custom-header.block > div {
+    flex-wrap: wrap;
+  }
+
+  .custom-header.block > div > div:not(:first-child):not(:last-child) {
+    display: none;
+  }
+}
