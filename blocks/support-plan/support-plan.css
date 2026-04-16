@@ -1,0 +1,145 @@
+/* Section base */
+.support-plan {
+  padding: 80px 20px;
+  background: #f6f7fb;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Section heading */
+.support-plan > div:first-child {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.support-plan h2 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 16px;
+}
+
+.support-plan p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Cards wrapper */
+.support-plan > div:last-child {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Individual card */
+.support-plan > div:last-child > div {
+  width: 320px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* Plan title */
+.support-plan > div:last-child h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+
+/* Price circle */
+.support-plan > div:last-child h3 {
+  width: 160px;
+  height: 160px;
+  background: #0b57d0;
+  border-radius: 50%;
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0; /* hide merged text spacing */
+}
+
+/* Break $09 and Per Month */
+.support-plan > div:last-child h3 strong {
+  display: flex;
+  flex-direction: column;
+  font-size: 42px;
+  line-height: 1.1;
+}
+
+.support-plan > div:last-child h3 strong::after {
+  content: "Per Month";
+  font-size: 14px;
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+/* Feature list */
+.support-plan ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 35px;
+  text-align: left;
+}
+
+.support-plan ul li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 14px;
+}
+
+/* Arrow icon */
+.support-plan ul li::before {
+  content: "›";
+  width: 22px;
+  height: 22px;
+  background: #333;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+/* Button */
+.support-plan .button-wrapper {
+  margin: 0;
+}
+
+.support-plan .button.primary {
+  display: inline-block;
+  background: #0b57d0;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.support-plan .button.primary:hover {
+  background: #0844a6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .support-plan > div:last-child {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .support-plan > div:last-child {
+    flex-direction: column;
+    align-items: center;
+  }
+}
