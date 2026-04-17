@@ -1,46 +1,161 @@
-
-.widget-wrapper .widget  {
-    text-align: center;
+/* ====== Section Wrapper ====== */
+.widget-wrapper {
+  padding: 80px 0;
+  background: #f8fafc;
+  text-align: center;
 }
 
-.widget-wrapper .widget a {
-    font-size: 20px;
-}
-.widget-wrapper .widget img {
-    width: 50px;
-    height: 50px;
-}
-.widget-wrapper .widget p:first-child {
-    margin: 0;
-    padding: 0;
-}
-.widget-wrapper .widget p:last-child {
-    font-size: 16px;
-    padding: 10px 20px;
-    margin: 0;
+/* Center top heading */
+.widget-wrapper > .widget > div:first-child {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  text-align: center;
 }
 
-.widget-wrapper .widget > div:nth-child(2), .widget-wrapper .widget > div:last-child {
-    display: flex;
-    text-align: center;
+.widget-wrapper h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #222;
 }
 
-.widget-wrapper .widget > div:nth-child(2) div:hover, .widget-wrapper .widget > div:last-child div:hover {
-    background-color: #0659d4;
-    color: #ffffff !important;
+.widget-wrapper > .widget > div:first-child p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
 }
 
-.widget-wrapper .widget > div:nth-child(2) a, .widget-wrapper .widget > div:last-child a{
-    color: #000000;
+/* ====== Grid Rows ====== */
+.widget-wrapper > .widget > div:nth-child(2),
+.widget-wrapper > .widget > div:nth-child(3) {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  padding: 0 20px;
 }
 
-.widgets-wrapper .widget > div:nth-child(2) h2 a:hover, .widgets-wrapper .widget > div:last-child h2 a:hover{
-    color: #ffffff !important;
-    text-decoration: none;
+/* ====== Feature Card ====== */
+.widget-wrapper .widget > div > div > div {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
-.widgets-wrapper .widget > div:nth-child(2) div:first-child h2 {
-  content: url('../../icons/search.svg');
-  vertical-align: middle; /* Optional: aligns image with text */
-  margin-right: 10px
+.widget-wrapper .widget > div > div > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* ====== Icons ====== */
+.widget-wrapper picture img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  margin-bottom: 18px;
+}
+
+/* ====== Titles ====== */
+.widget-wrapper h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.widget-wrapper h3 a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+}
+
+/* Description */
+.widget-wrapper h3 + p,
+.widget-wrapper p:last-child {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  padding: 0 20px;
+}
+
+/* ====== Highlighted Card (High Performance) ====== */
+.widget-wrapper h3[id*="high-performance"] {
+  /* color: #fff; */
+}
+
+.widget-wrapper h3[id*="high-performance"] a {
+  /* color: #fff; */
+}
+
+.widget-wrapper h3[id*="high-performance"] ~ p {
+  /* color: rgba(255, 255, 255, 0.85); */
+}
+
+.widget-wrapper h3[id*="high-performance"]
+  .picture,
+.widget-wrapper h3[id*="high-performance"] img {
+  /* filter: invert(1); */
+}
+
+.widget-wrapper h3[id*="high-performance"]
+  ~ p,
+.widget-wrapper h3[id*="high-performance"] {
+  position: relative;
+}
+
+/* Apply blue background to the parent card */
+.widget-wrapper h3[id*="high-performance"] {
+  padding-top: 0;
+}
+
+.widget-wrapper h3[id*="high-performance"]::before {
+  content: "";
+  position: absolute;
+  inset: -40px -30px -40px -30px;
+  background: #0d5be1;
+  border-radius: 6px;
+  z-index: -1;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 992px) {
+  .widget-wrapper > .widget > div:nth-child(2),
+  .widget-wrapper > .widget > div:nth-child(3) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .widget-wrapper > .widget > div:nth-child(2),
+  .widget-wrapper > .widget > div:nth-child(3) {
+    grid-template-columns: 1fr;
+  }
+
+  .widget-wrapper h2 {
+    font-size: 28px;
+  }
+}
+
+.widget.block > div:not(:first-child) > div:hover {
+  background-color: #0d6efd; /* change bg */
+  color: #ffffff;            /* change text color */
+}
+
+/* Ensure child text & links also change color */
+.widget.block > div:not(:first-child) > div:hover h3,
+.widget.block > div:not(:first-child) > div:hover p,
+.widget.block > div:not(:first-child) > div:hover a {
+  color: #ffffff;
+}
+
+/* Optional: image hover effect */
+.widget.block > div:not(:first-child) > div:hover img {
+  filter: brightness(0) invert(1);
+  transition: 0.3s;
+}
+
+.footer-wrapper {
+  display: none;
 }
