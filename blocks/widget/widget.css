@@ -156,6 +156,6 @@
   transition: 0.3s;
 }
 
-.footer-wrapper {
+.footer-wrapper, .header-wrapper {
   display: none;
 }
