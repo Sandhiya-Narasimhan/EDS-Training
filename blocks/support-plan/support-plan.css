@@ -1,6 +1,7 @@
 /* Section base */
 .support-plan {
-  padding: 80px 20px;
+  width: 100%;
+  padding: 0;
   background: #f6f7fb;
   font-family: "Segoe UI", sans-serif;
 }
@@ -22,6 +23,14 @@
 .support-plan p {
   color: #666;
   line-height: 1.6;
++
+  p {
+  margin-top: -45px; /* pulls text into the circle */
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+};
 }
 
 /* Cards wrapper */
@@ -48,40 +57,49 @@
   margin-bottom: 25px;
 }
 
-/* Price circle */
+/* Wrap price + text visually into a circle */
 .support-plan > div:last-child h3 {
-  width: 160px;
-  height: 160px;
-  background: #0b57d0;
+  width: 120px;
+  height: 120px;
+  background: #0b5ed7;
   border-radius: 50%;
-  margin: 0 auto 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-size: 0; /* hide merged text spacing */
+  margin: 0 auto;
 }
 
-/* Break $09 and Per Month */
+/* Price text */
 .support-plan > div:last-child h3 strong {
-  display: flex;
-  flex-direction: column;
+  color: #fff;
   font-size: 42px;
-  line-height: 1.1;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: -25px;
 }
 
-.support-plan > div:last-child h3 strong::after {
-  content: "Per Month";
+/* Dollar sign */
+.support-plan > div:last-child h3 sub {
   font-size: 14px;
-  margin-top: 6px;
-  font-weight: 400;
+  vertical-align: baseline;
+  margin-right: -4px;
 }
+
+/* Per Month text */
+.support-plan > div:last-child h3 + p {
+  margin-top: -50px; /* pulls text into the circle */
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  /* font-weight: bold; */
+}
+
 
 /* Feature list */
 .support-plan ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 35px;
+  margin: 35px 0;
   text-align: left;
 }
 
@@ -116,7 +134,7 @@
 
 .support-plan .button.primary {
   display: inline-block;
-  background: #0b57d0;
+  background: #0b5ed7;
   color: #fff;
   text-decoration: none;
   padding: 12px 28px;
@@ -124,6 +142,7 @@
   font-size: 15px;
   font-weight: 500;
   transition: background 0.3s ease;
+  border: none;
 }
 
 .support-plan .button.primary:hover {
@@ -141,5 +160,101 @@
   .support-plan > div:last-child {
     flex-direction: column;
     align-items: center;
+  }
+}
+/* Section wrapper */
+.emp-review-wrapper {
+  background: #fafafa;
+  padding: 60px 24px;
+}
+
+/* Grid for two cards */
+.emp-review {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* Each review card */
+.emp-review > div {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Top profile row */
+.emp-review > div > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Avatar */
+.emp-review picture img {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+
+/* Name */
+.emp-review strong {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  display: block;
+}
+
+/* Role */
+.emp-review > div > div:first-child p:last-child {
+  font-size: 14px;
+  color: #777;
+  margin-top: 2px;
+}
+
+/* Review content */
+.emp-review > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Rating text */
+.emp-review > div > div:last-child p:first-child {
+  font-weight: 600;
+  color: #2563eb;
+  position: relative;
+  padding-left: 96px;
+  font-size: 15px;
+}
+
+/* Stars before "Excellent" */
+.emp-review > div > div:last-child p:first-child::before {
+  content: "★★★★★";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: #2563eb;
+}
+
+/* Review description */
+.emp-review > div > div:last-child p:last-child {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .emp-review {
+    grid-template-columns: 1fr;
   }
 }
