@@ -28,6 +28,7 @@
   };
  
   /* Container */
+const shuffleCardSection = document.querySelector('.image-shuffle-cards.block');
   const section = document.createElement("div");
   section.className = "gallery-section";
  
@@ -57,7 +58,7 @@
  
   section.appendChild(buttons);
   section.appendChild(grid);
-  document.body.appendChild(section);
+  shuffleCardSection.appendChild(section);
  
   function loadImages(type) {
   grid.innerHTML = "";
