@@ -1,4 +1,7 @@
 /* ---------- FOOTER BASE ---------- */
+.custom-footer-container {
+  margin: 0 !important;
+}
 .custom-footer-wrapper {
   background: #0b5ed7; /* blue like screenshot */
   color: #ffffff;
@@ -49,9 +52,12 @@
   width: 32px;
   height: 32px;
   object-fit: contain;
-  filter: brightness(0) invert(1); /* white icons */
+  filter: invert(1); /* white icons */
   cursor: pointer;
   transition: transform 0.3s ease;
+  /* background-color: transparent; */
+  /* mix-blend-mode: multiply;opacity: 0.5; */
+  mix-blend-mode: color-dodge;
 }
 
 .custom-footer > div > div:first-child p img:hover {
@@ -92,7 +98,8 @@
   width: 18px;
   height: 18px;
   margin-right: 10px;
-  filter: brightness(0) invert(1);
+  filter: invert(1);
+  mix-blend-mode: color-dodge;
 }
 
 /* ---------- RECENT POSTS ---------- */
