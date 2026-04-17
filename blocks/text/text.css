@@ -1,0 +1,58 @@
+/* Wrapper */
+.text-wrapper {
+  background: #ffffff;
+  overflow: hidden;
+  padding: 30px 0;
+}
+
+/* Scroll container */
+.text.scroll-horizontal {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: slategray;
+}
+
+/* Inner scrolling row */
+.text.scroll-horizontal > div {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: max-content;
+  animation: scroll-text 20s linear infinite;
+}
+
+/* Each item */
+.text.scroll-horizontal p {
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: black;
+  white-space: nowrap;
+  -webkit-text-stroke: 1px #888888;
+  -webkit-text-fill-color: white;
+  /* -webkit-text-stroke-color: #FFFFFF; */
+}
+
+/* Optional emphasis for ** */
+.text.scroll-horizontal p::before {
+  /* content: "** "; */
+  color: #2563eb;
+}
+
+/* Animation */
+@keyframes scroll-text {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .text.scroll-horizontal p {
+    font-size: 28px;
+  }
+}
