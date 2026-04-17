@@ -3,6 +3,7 @@
   const speed = 200;
  
   counters.forEach(counter => {
+    counter.innerText = '';
     const updateCount = () => {
       const countValue = counter.getAttribute("id");
       const target = +countValue;
@@ -18,5 +19,3 @@
     };
     updateCount();
   });
-
- 
