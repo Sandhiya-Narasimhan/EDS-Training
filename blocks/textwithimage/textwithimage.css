@@ -1,31 +1,102 @@
-.textwithimage-wrapper > div > div {
+/* Wrapper spacing */
+.textwithimage > div {
   display: flex;
+  align-items: center;
+  gap: 60px;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.textwithimage-wrapper > div > div > div {
-  width: 50%;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
+/* Left image column */
+.textwithimage-wrapper .textwithimage > div > div:first-child {
+  flex: 1;
 }
-.textwithimage-wrapper > div > div > div ul {
-   list-style-type: none;
-   padding-left: 20px;
+
+.textwithimage-wrapper picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
-.textwithimage-wrapper > div > div > div ul li::before {
-  content: '\2713';
+
+/* Right content column */
+.textwithimage-wrapper .textwithimage > div > div:last-child {
+  flex: 1;
+}
+
+/* Heading */
+.textwithimage-wrapper h2 {
+  font-size: 34px;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #222;
+}
+
+/* Paragraph */
+.textwithimage-wrapper p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Checklist */
+.textwithimage-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.textwithimage-wrapper ul li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #222;
+}
+
+/* Check icon */
+.textwithimage-wrapper ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #0d6efd;
+  font-weight: 700;
+}
+
+/* Button */
+.textwithimage-wrapper a {
   display: inline-block;
-  width: 1em;
-  margin-left: -1em; 
-}
-.textwithimage-wrapper > div > div > div a {
-  color: #ffffff;
-  width: fit-content;
-  background: #0659d4;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  border-radius: 50px;
-  padding: 10px 30px; 
+  padding: 10px 26px;
+  background-color: #0b5ed7;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
   text-decoration: none;
+  transition: background-color 0.3s ease;
 }
+
+.textwithimage-wrapper a:hover {
+  background-color: #084298;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .textwithimage-wrapper .textwithimage > div {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .textwithimage-wrapper h2 {
+    font-size: 28px;
+  }
+}
+.textwithimage-wrapper {
+  padding: 0 !important;
+}
+
+/* Main layout */
