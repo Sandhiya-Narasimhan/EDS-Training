@@ -1,124 +1,136 @@
-/* ================================
-   HEADER BASE
+/* ===============================
+   HEADER WRAPPER
 ================================ */
+.custom-header-container {
+  margin: 0;
+}
 .custom-header-wrapper {
   background: #ffffff;
-  border-bottom: 3px solid #0b5ed7;
+  /* border-bottom: 3px solid #0b5ed7; */
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 1000;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.custom-header.block > div {
+/* Main container */
+.custom-header.block > div > div {
   max-width: 1200px;
-  margin: auto;
-  padding: 15px 20px;
+  margin: 0 auto;
+  padding: 14px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 25px;
 }
 
-/* ================================
+/* ===============================
    LOGO
 ================================ */
-.custom-header.block > div > div:first-child img {
+.custom-header img {
   max-height: 45px;
+  filter: invert(1);
 }
 
-/* ================================
-   MAIN NAV
+/* ===============================
+   RESET LISTS
 ================================ */
-.custom-header.block > div > div:not(:first-child):not(:last-child) ul {
+.custom-header ul {
   list-style: none;
+  margin: 0;
   padding: 0;
+}
+
+/* ===============================
+   MAIN NAV ALIGNMENT
+================================ */
+.custom-header p,
+.custom-header ul {
   margin: 0;
 }
 
-.custom-header.block > div > div {
+.custom-header ul > li {
   position: relative;
 }
 
-.custom-header.block > div > div > ul {
+/* Align nav items inline */
+.custom-header ul {
   display: flex;
   align-items: center;
 }
 
-.custom-header.block li {
-  position: relative;
+/* ===============================
+   NAV LINKS
+================================ */
+.custom-header a {
+  text-decoration: none;
+  color: #111;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 14px;
+  display: inline-block;
+  transition: color 0.3s ease;
 }
 
-/* Top-level links */
-.custom-header a {
-  color: #111;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  padding: 10px 14px;
-  display: block;
+
+.custom-header ul a, .custom-header ul a:hover {
+  border: none !important;
+  background: none !important;
+}
+.custom-header ul a {
+  color:#111 !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
 }
 
 .custom-header a:hover {
-  color: #0b5ed7;
+  color: #0b5ed7 !important;
 }
 
-/* ================================
-   DROPDOWN MENU
+/* Dropdown arrow for button.primary */
+.button.primary::after {
+  content: " ▾";
+  font-size: 11px;
+}
+
+/* ===============================
+   DROPDOWNS
 ================================ */
-.custom-header li ul {
+.custom-header ul li ul {
   position: absolute;
+  top: calc(100% + 10px);
   left: 0;
-  top: 100%;
   background: #ffffff;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  min-width: 230px;
+  min-width: 220px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   display: none;
   flex-direction: column;
   padding: 10px 0;
-  z-index: 1000;
+  z-index: 999;
 }
 
-.custom-header li ul li {
-  padding: 0;
-}
-
-.custom-header li ul li a,
-.custom-header li ul li {
-  font-size: 14px;
-  padding: 10px 20px;
-  color: #222;
-  cursor: pointer;
-}
-
-.custom-header li ul li:hover {
-  background: #f3f6fb;
-  color: #0b5ed7;
-}
-
-/* Show dropdown on hover */
-.custom-header li:hover > ul {
+.custom-header ul li:hover > ul {
   display: block;
 }
 
-/* ================================
-   ACTIVE / BUTTON STYLE
-================================ */
-.button.primary {
-  background: transparent;
-  font-weight: 600;
+.custom-header ul li ul li {
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #222;
+  white-space: nowrap;
 }
 
-.button.primary::after {
-  content: " ▾";
-  font-size: 12px;
+.custom-header ul li ul li:hover {
+  background: #f4f7ff;
+  color: #0b5ed7;
 }
 
-/* ================================
+/* ===============================
    GET QUOTES BUTTON
 ================================ */
-.custom-header > div > div:last-child a {
+.custom-header > div > div > p:last-child a {
   background: #0b5ed7;
-  color: #ffffff;
+  color: #ffffff !important;
   padding: 10px 22px;
   border-radius: 6px;
   font-size: 14px;
@@ -126,26 +138,286 @@
   transition: background 0.3s ease;
 }
 
-.custom-header > div > div:last-child a:hover {
+.custom-header > div > div > p:last-child a:hover {
   background: #084bb5;
 }
 
-/* ================================
-   REMOVE UNWANTED LIST STYLES
-================================ */
-.custom-header p {
-  margin: 0;
+/* Push Get Quotes to far right */
+.custom-header > div > div > p:last-child {
+  margin-left: auto;
 }
 
-/* ================================
+/* ===============================
+   ACTIVE STYLE
+================================ */
+.custom-header a:focus,
+.custom-header a:active {
+  color: #0b5ed7 !important;
+  border: none !important;
+  background: none !important;
+}
+
+/* ===============================
    RESPONSIVE
 ================================ */
 @media (max-width: 992px) {
-  .custom-header.block > div {
+  .custom-header.block > div > div {
     flex-wrap: wrap;
   }
 
-  .custom-header.block > div > div:not(:first-child):not(:last-child) {
+  .custom-header ul:not(:first-of-type),
+  .custom-header > div > div > p:last-child {
     display: none;
   }
+}
+``
+
+.custom-header ul a {
+  border: none !important;
+  background: none !important;
+}
+
+
+/* ===============================
+   HEADER
+================================ */
+.custom-header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  border-bottom: 4px solid #0b5ed7;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.custom-header.block > div > div {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Logo */
+.custom-header img {
+  height: 42px;
+}
+
+/* Navigation */
+.custom-header ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-header li {
+  position: relative;
+}
+
+.custom-header a {
+  text-decoration: none;
+  color: #111;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 14px;
+}
+
+.custom-header a:hover {
+  color: #0b5ed7;
+}
+
+/* Dropdown */
+.custom-header ul li ul {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 15px 35px rgba(0,0,0,.15);
+  display: none;
+  min-width: 220px;
+  flex-direction: column;
+}
+
+.custom-header li:hover > ul {
+  display: block;
+}
+
+.custom-header ul li ul li {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.custom-header ul li ul li:hover {
+  background: #f4f7ff;
+  color: #0b5ed7;
+}
+
+/* Get Quotes */
+.custom-header > div > div > p:last-child {
+  margin-left: auto;
+}
+
+.custom-header > div > div > p:last-child a {
+  background: #0b5ed7;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 6px;
+}
+/* ================= HERO SLIDER ================= */
+.hero-slider-wrapper {
+  width: 100%;
+  height: 650px;
+  overflow: hidden;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: none !important;
+}
+
+.hero-slider {
+  display: flex;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+/* Each slide */
+.hero-slider > div {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Dark overlay like image */
+.hero-slider > div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.25)
+  );
+  z-index: 1;
+}
+
+/* Hide img (we use bg instead) */
+.hero-slider picture {
+  display: none;
+}
+
+/* ===============================
+   SLIDE CONTAINER
+================================ */
+.hero-slider > div {
+  position: relative;
+  min-width: 100%;
+  height: 650px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+
+/* ===============================
+   CONTENT ALIGNMENT
+================================ */
+.hero-slider div > div {
+  position: absolute;
+  z-index: 2;
+  left: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 560px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===============================
+   HEADING
+================================ */
+.hero-slider h3 {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  line-height: 1.2;
+}
+
+/* ===============================
+   DESCRIPTION
+================================ */
+.hero-slider h5 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 28px;
+  color: #e6e6e6;
+}
+
+/* ===============================
+   CTA BUTTONS
+================================ */
+#read-morecontact-us-1, #read-morecontact-us {
+  display: flex;
+  gap: 15px;
+}
+
+#read-morecontact-us-1 a, #read-morecontact-us a {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #0b5ed7;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+#read-morecontact-us-1 a:hover, #read-morecontact-us a:hover {
+  background: #084bb5;
+}
+
+/* ===============================
+   REMOVE DEFAULT BR EFFECT
+================================ */
+#read-morecontact-us-1 br, #read-morecontact-us br {
+  display: none;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .hero-slider > div > div {
+    left: 30px;
+    right: 30px;
+    max-width: 100%;
+  }
+
+  .hero-slider h3 {
+    font-size: 32px;
+  }
+}
+
+/* ================= ARROWS ================= */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  font-size: 38px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  cursor: pointer;
+  padding: 6px 14px;
+}
+
+.hero-arrow.next {
+  right: 20px;
 }
