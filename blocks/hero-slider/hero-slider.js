@@ -1,83 +1,33 @@
-const slidesData = [
-    {
-      image: "https://images.unsplash.com/photo-1581091870627-3fd8e5f60b79",
-      title: "Super IT Service For Digital Business",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod to incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
-      title: "Smart Technology Solutions",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod to incididunt ut labore et dolore magna aliqua."
+
+  const slider = document.querySelector(".hero-slider");
+  const slides = slider.children;
+  let index = 0;
+
+  // Convert <img> to background-image
+  [...slides].forEach(slide => {
+    const img = slide.querySelector("img");
+    if (img) {
+      slide.style.backgroundImage = `url('${img.src}')`;
     }
-  ];
- 
-  const carousel = document.createElement("div");
-  carousel.className = "carousel";
- 
-  slidesData.forEach((slide, index) => {
-    const slideDiv = document.createElement("div");
-    slideDiv.className = "slide";
-    if (index === 0) slideDiv.classList.add("active");
- 
-    slideDiv.innerHTML = `
-      ${slide.image}
- 
-      <div class="overlay"></div>
- 
-      <div class="content">
-        <h1>${slide.title}</h1>
-        <p>${slide.desc}</p>
- 
-        <div class="buttons">
-          <button class="primary">Read More</button>
-          <button class="secondary">Contact Us</button>
-        </div>
- 
-        <!-- ✅ Social Media Icons -->
-        <div class="social">
-          <span title="Facebook">📘</span>
-          <span title="Twitter">🐦</span>
-          <span title="Instagram">📸</span>
-          <span title="LinkedIn">💼</span>
-        </div>
-      </div>
-    `;
- 
-    carousel.appendChild(slideDiv);
   });
- 
-  // Navigation arrows
-  const prev = document.createElement("span");
-  prev.className = "nav prev";
-  prev.innerHTML = "‹";
- 
-  const next = document.createElement("span");
-  next.className = "nav next";
-  next.innerHTML = "›";
- 
-  carousel.appendChild(prev);
-  carousel.appendChild(next);
-  document.body.appendChild(carousel);
- 
-  // Slider logic
-  const slides = document.querySelectorAll(".slide");
-  let current = 0;
- 
-  function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[index].classList.add("active");
+
+  function moveSlide(i) {
+    slider.style.transform = `translateX(-${i * 100}%)`;
   }
- 
-  next.onclick = () => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  };
- 
-  prev.onclick = () => {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
-  };
- 
-  // Auto-slide
-  setInterval(() => next.click(), 5000);
- 
+
+  // Auto play
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    moveSlide(index);
+  }, 6000);
+
+  // Arrow (created via JS, no HTML change)
+  // const next = document.createElement("button");
+  // next.innerHTML = ">";
+  // next.className = "hero-arrow next";
+  // next.onclick = () => {
+  //   index = (index + 1) % slides.length;
+  //   moveSlide(index);
+  // };
+
+  // document.querySelector(".hero-slider-wrapper").appendChild(next);
