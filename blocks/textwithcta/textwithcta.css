@@ -1,47 +1,113 @@
-.textwithcta-container h5 {
-    font-size: 16px;
+/* Outer wrapper */
+.textwithcta-wrapper {
+  width: 100%;
+  padding: 0 !important;
 }
 
-.textwithcta-container h2 {
-    font-size: 40px;
-    margin: 7px 0;
-} 
-
-.textwithcta-container[data-id='bg-image-content'] {
-    background-image: url('https://demo.themexbd.com/wpx/technowp/wp-content/uploads/2025/04/technowp-slider2.jpg');
-    margin: 0 auto;
-    padding: 100px 0;
+/* Main CTA block */
+.textwithcta {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
 }
 
-.textwithcta-container .textwithcta-wrapper {
-    padding: 0;
+/* Use image as background */
+.textwithcta > div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  z-index: 2;
 }
 
-.textwithcta-container .textwithcta.block > div {
-    display: flex;
-}
-.textwithcta-container .textwithcta.block > div div:first-child {
-    width: 60%;
-}
-.textwithcta-container .textwithcta.block > div div:last-child {
-    width: 40%;
-}
-.textwithcta-container .textwithcta.block > div div:last-child p {
-    height: 100%;
-    align-items: center;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0;
+/* Set background image from img */
+.textwithcta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./media_1673769d04228846ef73f004ab468895fd00e1869.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
-.textwithcta-container .textwithcta.block > div div:last-child p a {
-    color: #ffffff;
-    width: 40%;
-    background: #0659d4;
-    height: 40%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    border-radius: 10px;
-    text-decoration: none;
+/* Dark overlay */
+.textwithcta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Hide picture (used only as source) */
+.textwithcta picture {
+  display: none;
+}
+
+/* Left content */
+.textwithcta > div > div:first-child {
+  max-width: 650px;
+}
+
+/* Small heading */
+.textwithcta h5 {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  color: #e0e0e0;
+}
+
+/* Main heading */
+.textwithcta h2 {
+  font-size: 42px;
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Right CTA */
+.textwithcta > div > div:last-child {
+  flex-shrink: 0;
+}
+
+/* CTA button */
+.textwithcta a {
+  display: inline-block;
+  padding: 14px 34px;
+  background-color: #0b5ed7;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.textwithcta a:hover {
+  background-color: #084298;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .textwithcta > div {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .textwithcta h2 {
+    font-size: 30px;
+  }
 }
