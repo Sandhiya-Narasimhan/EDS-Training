@@ -1,10 +1,10 @@
-/* Section wrapper */
+/* Section background */
 .emp-review-wrapper {
-  background: #fafafa;
+  background-color: #fafafa;
   padding: 60px 24px;
 }
 
-/* Grid for two cards */
+/* Two-column layout */
 .emp-review {
   max-width: 1200px;
   margin: 0 auto;
@@ -13,76 +13,72 @@
   gap: 30px;
 }
 
-/* Each review card */
+/* Each testimonial card */
 .emp-review > div {
   background: #ffffff;
   padding: 32px;
   border-radius: 8px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 20px;
+  row-gap: 16px;
 }
 
-/* Top profile row */
-.emp-review > div > div:first-child {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+/* Avatar column */
+.emp-review > div > div:nth-child(1) {
+  grid-row: span 2;
 }
 
-/* Avatar */
 .emp-review picture img {
-  border-radius: 50%;
   width: 70px;
   height: 70px;
+  border-radius: 50%;
   object-fit: cover;
 }
 
-/* Name */
-.emp-review strong {
+/* Name & role */
+.emp-review > div > div:nth-child(2) strong {
   font-size: 16px;
   font-weight: 600;
   color: #222;
-  display: block;
 }
 
-/* Role */
-.emp-review > div > div:first-child p:last-child {
+.emp-review > div > div:nth-child(2) p:last-child {
   font-size: 14px;
   color: #777;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
-/* Review content */
-.emp-review > div > div:last-child {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+/* Review section */
+.emp-review > div > div:nth-child(3) {
+  grid-column: 1 / -1;
+  margin-top: 10px;
 }
 
 /* Rating text */
-.emp-review > div > div:last-child p:first-child {
+.emp-review > div > div:nth-child(3) p:first-child {
+  font-size: 15px;
   font-weight: 600;
-  color: #2563eb;
+  color: #0b5ed7;
   position: relative;
   padding-left: 96px;
-  font-size: 15px;
+  margin-bottom: 8px;
 }
 
-/* Stars before "Excellent" */
-.emp-review > div > div:last-child p:first-child::before {
+/* Star icons */
+.emp-review > div > div:nth-child(3) p:first-child::before {
   content: "★★★★★";
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 16px;
   letter-spacing: 3px;
+  font-size: 16px;
   color: #2563eb;
 }
 
-/* Review description */
-.emp-review > div > div:last-child p:last-child {
+/* Description text */
+.emp-review > div > div:nth-child(3) p:last-child {
   font-size: 15px;
   line-height: 1.6;
   color: #555;
